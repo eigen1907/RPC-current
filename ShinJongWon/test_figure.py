@@ -1,10 +1,15 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import RPCmodule as RPCmodule
 
-path = "2017/dpid_320_2017.csv"
-dataset = RPCmodule.dataFromPath(path)
+from RPC_package.RPC_module1 import dataFromPath
+
+path = "../RPC-data/2017/dpid_320_2017.csv"
+dataset = dataFromPath(path)
 
 #figure from data
 fig, axes = plt.subplots(2, 4)
