@@ -49,3 +49,48 @@ def dataFromPath(path):
 
 
   return dataset
+
+
+
+def dataFromPath2(path):
+
+
+  dataset = pd.read_csv(
+    str(path),
+    converters={i: str for i in range(0, 11)},
+    header=None
+  )
+
+
+  dataset.columns = [
+    "run_number",
+    "fill_number",
+    "duration",
+    "start_time",
+    "end_time",
+    "delivered_lumi",
+    "recorded_lumi",
+    "l1_triggers_counter",
+    "l1_hlt_mode_stripped",
+    "hlt_key",
+    "initial_prescale_index"
+  ]
+
+
+  dataset = dataset.dropna()
+
+  dataset["start_time"] = pd.to_datetime(dataset[ "start_time"], format='%Y-%m-%d %H:%M:%S', errors='coerce')
+  dataset["end_time"] = pd.to_datetime(dataset["end_time"], format='%Y-%m-%d %H:%M:%S', errors='coerce')
+  dataset["run_number"] = pd.to_numeric(dataset["run_number"], errors='coerce', downcast='integer')
+  dataset["fill_number"] = pd.to_numeric(dataset["fill_number"], errors='coerce', downcast='integer')
+  dataset["duration"] = pd.to_numeric(dataset["duration"], errors='coerce', downcast='integer')
+  dataset["delivered_lumi"] = pd.to_numeric(dataset["delivered_lumi"], errors='coerce', downcast='float')
+  dataset["recorded_lumi"] = pd.to_numeric(dataset["recorded_lumi"], errors='coerce', downcast='float')
+  dataset["l1_triggers_counter"] = pd.to_numeric(dataset["l1_triggers_counter"], errors='coerce', downcast='integer')
+  dataset["initial_prescale_index"] = pd.to_numeric(dataset["initial_prescale_index"], errors='coerce', downcast='integer')
+  
+
+  dataset = dataset.dropna()
+
+
+  return dataset
