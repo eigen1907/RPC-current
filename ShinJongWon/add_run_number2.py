@@ -4,21 +4,22 @@ import RPC_module1 as RPC_module1
 import pandas as pd
 
 
-path_2016 = "/Users/mainroot/RPC-current/ShinJongWon/2016/"
-path_2017 = "/Users/mainroot/RPC-current/ShinJongWon/2017/"
-path_2018 = "/Users/mainroot/RPC-current/ShinJongWon/2018/"
+#path_2016 = "/Users/mainroot/RPC-current/ShinJongWon/2016/"
+#path_2017 = "/Users/mainroot/RPC-current/ShinJongWon/2017/"
+path_2018 = "/Users/mainroot/RPC-test_data/2018/"
 
 
-filelist_2016 = os.listdir(path_2016)
-filelist_2017 = os.listdir(path_2017)
+#filelist_2016 = os.listdir(path_2016)
+#filelist_2017 = os.listdir(path_2017)
 filelist_2018 = os.listdir(path_2018)
 
 
-run_data_2016 = pd.read_csv("/Users/mainroot/RPC-data/run_number/run_number_2016.csv")
-run_data_2017 = pd.read_csv("/Users/mainroot/RPC-data/run_number/run_number_2017.csv")
+#run_data_2016 = pd.read_csv("/Users/mainroot/RPC-data/run_number/run_number_2016.csv")
+#run_data_2017 = pd.read_csv("/Users/mainroot/RPC-data/run_number/run_number_2017.csv")
 run_data_2018 = pd.read_csv("/Users/mainroot/RPC-data/run_number/run_number_2018.csv")
 
 
+"""
 for i in range(len(filelist_2016)):
     data_2016 = pd.read_csv(path_2016 + filelist_2016[i])
     break_point = 0
@@ -57,9 +58,9 @@ for i in range(len(filelist_2017)):
                 break
 
     data_2017.to_csv("ShinJongWon/2017_addrun/" + filelist_2017[i], index=False)
+"""
 
-
-for i in range(len(filelist_2018)):
+for i in range(115, len(filelist_2018)):
     data_2018 = pd.read_csv(path_2018 + filelist_2018[i])
     break_point = 0
     data_2018["run_number"] = None
@@ -77,5 +78,8 @@ for i in range(len(filelist_2018)):
                 break
 
     data_2018.to_csv("ShinJongWon/2018_addrun/" + filelist_2018[i], index=False)
+
+
+
 
 

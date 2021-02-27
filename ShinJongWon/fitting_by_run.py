@@ -20,8 +20,6 @@ fill_5950.plot(
     colormap = "rainbow"
 )
 
+
 plt.show()
-
-    
-
 
