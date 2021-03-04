@@ -27,8 +27,6 @@ for dpid in dpidList:
                 )
             ax.legend(fontsize=12, loc="upper left")
             plt.title("Scatter by Fill, Colered by Run", fontsize=20)
-            plt.xticks(np.arange(dataset.iloc[0][0], dataset.iloc[-1][0], step=(dataset.iloc[0][0]-dataset.iloc[-1][0])/5))
-            plt.yticks()
             plt.xlabel("Imon_change_date", fontsize=12)
             plt.ylabel("Imon", fontsize=12)
             plt.show()
