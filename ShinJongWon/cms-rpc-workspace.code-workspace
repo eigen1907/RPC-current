@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "ShinJongWon",
+			"path": "."
+		},
+		{
+			"name": "RPC-test_data",
+			"path": "../../RPC-test_data"
+		},
+		{
+			"name": "RPC-data",
+			"path": "../../RPC-data"
+		},
+		{
+			"name": "cmssw",
+			"path": "../../cmssw"
+		}
+	],
+	"settings": {}
+}

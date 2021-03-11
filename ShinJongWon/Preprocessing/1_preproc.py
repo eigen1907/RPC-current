@@ -29,12 +29,13 @@ def dataFromPath(path):
 
   dataset = dataset.dropna()
 
+  
   dataset['Imon_change_date'] = pd.to_datetime(dataset['Imon_change_date'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
   dataset['lumi_start_date'] = pd.to_datetime(dataset['lumi_start_date'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
   dataset['lumi_end_date'] = pd.to_datetime(dataset['lumi_end_date'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
   dataset['Imon_change_date2'] = pd.to_datetime(dataset['Imon_change_date2'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
   dataset['uxc_change_date'] = pd.to_datetime(dataset['uxc_change_date'], format='%Y-%m-%d %H:%M:%S', errors='coerce')
-  
+
   
   dataset['Imon'] = pd.to_numeric(dataset['Imon'], errors='coerce', downcast='float')
   dataset['Vmon'] = pd.to_numeric(dataset['Vmon'], errors='coerce', downcast='float')
@@ -78,7 +79,7 @@ def dataFromPath2(path):
 
 
   dataset = dataset.dropna()
-
+  
   dataset["start_time"] = pd.to_datetime(dataset[ "start_time"], format='%Y-%m-%d %H:%M:%S', errors='coerce')
   dataset["end_time"] = pd.to_datetime(dataset["end_time"], format='%Y-%m-%d %H:%M:%S', errors='coerce')
   dataset["run_number"] = pd.to_numeric(dataset["run_number"], errors='coerce', downcast='integer')

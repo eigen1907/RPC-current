@@ -3,32 +3,31 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+path = "/Users/mainroot/RPC-test_data/cert_data/2018test/dpid_322_2018.csv"
 
-path = "/Users/mainroot/RPC-test_data/2016_sep"
-dpidList = os.listdir(path)
+data = pd.read_csv(path)
 
-print(len(dpidList))
+fill_groups = data.groupby("fill_number")
 
-for dpid in dpidList:
-    fillList = os.listdir(f"{path}/{dpid}")
-    for fill in fillList:
-        dataset = pd.read_csv(f"{path}/{dpid}/{fill}")
-        if len(dataset) > 50:
-            groups = dataset.groupby("run_number")
-            
-            fig, ax = plt.subplots(figsize=[16, 10])
-            for name, group in groups:
-                ax.plot(
-                    group.Imon_change_date,
-                    group.Imon,
-                    marker = "o",
-                    linestyle = "",
-                    label = str(name)[0:-2]
-                )
-            ax.legend(fontsize=12, loc="upper left")
-            plt.title("Scatter by Fill, Colered by Run", fontsize=20)
-            plt.xlabel("Imon_change_date", fontsize=12)
-            plt.ylabel("Imon", fontsize=12)
-            plt.show()
+print(fill_groups)
+
+"""
+for fill_name, fill_group in fill_groups:
+    run_groups = fill_group.groupby("run_number")
+    fig, ax = plt.subplots(figsize=[16, 10])
+    for run_name, run_group in run_groups:
+        ax.plot(
+            run_group.Imon_change_date,
+            run_group.Imon,
+            marker = "o",
+            linestyle = "",
+            label = "run_number: " + str(run_name)
+        )
+    ax.legend(fontsize=12, loc="upper left")
+    plt.title(f"Fill number: {fill_name}", fontsize=20)
+    plt.xlabel("Imon_change_date", fontsize=12)
+    plt.ylabel("Imon", fontsize=12)
+    plt.show()
+"""
 
 
