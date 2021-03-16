@@ -24,7 +24,6 @@ cert_data2017 = pd.read_csv(CERT_PATH_2017)
 cert_data2018 = pd.read_csv(CERT_PATH_2018)
 
 
-
 def merge_by_run(inputpath, filename, cert_file, outputpath):
     data = pd.read_csv(inputpath + filename)
     data = data.drop(columns="Unnamed: 0")

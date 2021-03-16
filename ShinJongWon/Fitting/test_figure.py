@@ -43,9 +43,9 @@ def figure(dataset):
     plt.show()
 
 
-origin_data = pd.read_csv("/Users/mainroot/RPC-test_data/original/2016/dpid_315_2016.csv")
-cert_data = pd.read_csv("/Users/mainroot/RPC-test_data/cert_data/2016test/dpid_315_2016.csv")
+#origin_data = pd.read_csv("/Users/mainroot/RPC-test_data/original/2016/dpid_315_2016.csv")
+cert_data = pd.read_csv("/Users/mainroot/RPC-test_data/cert_data/2016_final/dpid_315_2016.csv")
 
-figure(origin_data)
+#figure(origin_data)
 figure(cert_data)
 
