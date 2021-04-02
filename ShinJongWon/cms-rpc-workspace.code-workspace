@@ -5,16 +5,13 @@
 			"path": "."
 		},
 		{
-			"name": "RPC-test_data",
-			"path": "../../RPC-test_data"
+			"path": "../../RPC_modified_data"
 		},
 		{
-			"name": "RPC-data",
-			"path": "../../RPC-data"
+			"path": "../../RPC_origin_data"
 		},
 		{
-			"name": "cmssw",
-			"path": "../../cmssw"
+			"path": "../../RPC_graph"
 		}
 	],
 	"settings": {}
