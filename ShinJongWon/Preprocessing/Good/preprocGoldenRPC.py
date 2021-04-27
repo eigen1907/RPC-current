@@ -73,6 +73,7 @@ def selectGoldenInterval(rpcImonFile, runInfoFile, runCertFile, outputFile):
 
     try:
         rpcImonCertData = pd.concat(selImons, ignore_index=True)
+        rpcImonCertData = rpcImonCertData[rpcImonCertData.inst_lumi >= 0]
         rpcImonCertData.dropna()
         rpcImonCertData.to_csv(outputFile, index=False)
     except:

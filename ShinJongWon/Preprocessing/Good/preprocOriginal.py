@@ -29,8 +29,12 @@ def preprocOriginal(rpcImonFile, outputFile):
 
     for colName in floatDtypeList:
         rpcImonData[colName] = pd.to_numeric(rpcImonData[colName], errors='coerce', downcast='float')
+
+    rpcImonData = rpcImonData[rpcImonData.inst_lumi >= 0]
     
     rpcImonData = rpcImonData.dropna()
+
+    rpcImonData.to_csv(outputFile, index=False)
 
 
 if __name__ == "__main__":
