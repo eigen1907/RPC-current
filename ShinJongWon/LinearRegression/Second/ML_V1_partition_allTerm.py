@@ -23,6 +23,7 @@ def is_outlier(points, thresh=3.5):
     return modified_z_score > thresh
 
 
+
 def getML_V1_Param(rpcImonSepPath, dpidName):
 
     rpcImonData = pd.read_csv(rpcImonSepPath + dpidName, low_memory=False)
@@ -67,6 +68,7 @@ if __name__ == "__main__":
     rpc2018dropping = os.listdir("/Users/mainroot/RPC_modified_data/SecondaryArrangement/GoldenRPCSeparate/2018_dropping/")
     rpc2018normal = os.listdir("/Users/mainroot/RPC_modified_data/SecondaryArrangement/GoldenRPCSeparate/2018_normal/")
 
+
     for i in range(len(rpc2016former)):
         rpc2016former[i] = rpc2016former[i][0:-9]
 
@@ -92,6 +94,7 @@ if __name__ == "__main__":
     rpcImonSepFolders.sort()
 
     rpcImonSepPaths = []
+
     for i in range(len(rpcImonSepFolders)):
         rpcImonSepPaths.append(rpcImonPath + rpcImonSepFolders[i] + "/")
         eachDpids = []
@@ -102,4 +105,5 @@ if __name__ == "__main__":
             paramList[i] = paramList[i].append(getML_V1_Param(rpcImonSepPaths[i], eachDpid), ignore_index=True)
 
 
-    plt.hist(paramList[i])
+    print(len(paramList))
+    print(len(paramList[0]))
