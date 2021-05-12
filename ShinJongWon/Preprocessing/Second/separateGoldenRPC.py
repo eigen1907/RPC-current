@@ -48,10 +48,10 @@ def separateGolden2018(rpcImonFile, outputFile1, outputFile2):
     rpcImonData = rpcImonData[(rpcImonData.Imon_change_date < pd.to_datetime("2018-06-07 06:00:00")) | (rpcImonData.Imon_change_date > pd.to_datetime("2018-06-09 06:00:00"))]
     
     ### Data 2018 has voltage dropping section
-    ### rpcImonData1: 2018-07-27 ~ 2018-08-19 19:00:00 (Dropping section)
-    rpcImonData1 = rpcImonData[(rpcImonData.Imon_change_date > pd.to_datetime("2018-07-27")) & (rpcImonData.Imon_change_date < pd.to_datetime("2018-08-19 19:00:00"))]
-    ### rpcImonData2: Start ~ 2018-07-27 | 2018-08-19 19:00:00 ~ End (Normal Section)
-    rpcImonData2 = rpcImonData[(rpcImonData.Imon_change_date < pd.to_datetime("2018-07-27")) | (rpcImonData.Imon_change_date > pd.to_datetime("2018-08-19 19:00:00"))]
+    ### rpcImonData1: 2018-07-27 ~ 2018-08-19 22:00:00 (Dropping section)
+    rpcImonData1 = rpcImonData[(rpcImonData.Imon_change_date > pd.to_datetime("2018-07-27")) & (rpcImonData.Imon_change_date < pd.to_datetime("2018-08-19 22:00:00"))]
+    ### rpcImonData2: Start ~ 2018-07-27 | 2018-08-19 22:00:00 ~ End (Normal Section)
+    rpcImonData2 = rpcImonData[(rpcImonData.Imon_change_date < pd.to_datetime("2018-07-27")) | (rpcImonData.Imon_change_date > pd.to_datetime("2018-08-19 22:00:00"))]
     
     if len(rpcImonData1) != 0:
         rpcImonData1.to_csv(outputFile1, index=False)

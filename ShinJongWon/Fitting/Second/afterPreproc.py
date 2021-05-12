@@ -37,8 +37,8 @@ def figure(rpcImonPath, rpcImonFile, figurePath):
 
 
 if __name__ == "__main__":
-    rpcImonPath = "/Users/mainroot/RPC_modified_data/SecondaryArrangement/GoldenRPCSeparate/2018_dropping/"
-    figurePath = "/Users/mainroot/RPC_graph/AfterPreproc/2018_dropping/"
+    rpcImonPath = "/Users/mainroot/RPC_modified_data/SecondaryArrangement/GoldenRPCSeparate/2016_latter/"
+    figurePath = "/Users/mainroot/RPC_graph/Preprocessing/AfterSep/2016_latter/"
     rpcImonFiles = os.listdir(rpcImonPath)
 
     pool = multiprocessing.Pool(6)
